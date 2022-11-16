@@ -37,5 +37,11 @@ SELECT DISTINCT CITY FROM STATION WHERE LEFT(CITY,1) NOT IN ('a','e','i','o','u'
 
 13)//Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name.
  If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID
-
+14)
 SELECT NAME FROM STUDENTS WHERE MARKS >75 ORDER BY RIGHT(NAME,3)ASC,ID;
+
+15)//Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than . Round your answer to  decimal places.
+select round(long_w, 4) from station where lat_n<137.2345 order by lat_n desc limit 1 ;
+
+16)Query the smallest Northern Latitude (LAT_N) from STATION that is greater than . Round your answer to  decimal places.
+select round(lat_n, 4) from station where lat_n > 38.7780 order by lat_n asc limit 1 ;
