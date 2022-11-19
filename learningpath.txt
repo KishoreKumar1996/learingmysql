@@ -45,3 +45,15 @@ select round(long_w, 4) from station where lat_n<137.2345 order by lat_n desc li
 
 16)Query the smallest Northern Latitude (LAT_N) from STATION that is greater than . Round your answer to  decimal places.
 select round(lat_n, 4) from station where lat_n > 38.7780 order by lat_n asc limit 1 ;
+
+17)You are given a table, BST, containing two columns: N and P, where N represents the value of a node in Binary Tree, and P is the parent of N.
+
+
+
+Write a query to find the node type of Binary Tree ordered by the value of the node. Output one of the following for each node:
+select n, case when p is null then "Root" when n in (select p from bst) then "Inner" else "Leaf" end from bst order by n;
+
+18)Samantha was tasked with calculating the average monthly salaries for all employees in the EMPLOYEES table, but did not realize her keyboard's  key was broken until after completing the calculation. She wants your help finding the difference between her miscalculation (using salaries with any zeros removed), and the actual average salary.
+
+Write a query calculating the amount of error (i.e.:  average monthly salaries), and round it up to the next integer.
+SELECT ROUND(AVG(SALARY))- ROUND(AVG(REPLACE(SALARY,'0','')))FROM EMPLOYEES;
