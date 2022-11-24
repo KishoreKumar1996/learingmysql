@@ -40,6 +40,7 @@ SELECT DISTINCT CITY FROM STATION WHERE LEFT(CITY,1) NOT IN ('a','e','i','o','u'
 14)
 SELECT NAME FROM STUDENTS WHERE MARKS >75 ORDER BY RIGHT(NAME,3)ASC,ID;
 
+
 15)//Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than . Round your answer to  decimal places.
 select round(long_w, 4) from station where lat_n<137.2345 order by lat_n desc limit 1 ;
 
@@ -57,3 +58,8 @@ select n, case when p is null then "Root" when n in (select p from bst) then "In
 
 Write a query calculating the amount of error (i.e.:  average monthly salaries), and round it up to the next integer.
 SELECT ROUND(AVG(SALARY))- ROUND(AVG(REPLACE(SALARY,'0','')))FROM EMPLOYEES;
+
+19)
+
+SELECT CONCAT(NAME,'(' ,LEFT(OCCUPATION,1),')') FROM OCCUPATIONS ORDER BY NAME ;
+SELECT CONCAT(CONCAT(CONCAT(CONCAT(CONCAT(CONCAT('There are a total of '),COUNT(OCCUPATION)),' '),LOWER(OCCUPATION)),'s'),'.') FROM OCCUPATIONS GROUP BY OCCUPATION ORDER BY COUNT(OCCUPATION);
